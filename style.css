@@ -74,7 +74,7 @@ body.writing-page {
     position: static;
     height: auto;
     max-height: none;
-    border-width: 0;
+    border-width: 0 12px; /* keep dashed borders on mobile */
     margin: 0 16px 24px;
   }
   .videostrip iframe { height: min(35vh, 320px); }
@@ -396,5 +396,16 @@ nav {
     width: 100% !important;
     height: auto;
     padding: 8px 0 !important;
+  }
+  
+  /* Capture atlas: keep aspect ratio, remove float, use full width */
+  .capture-atlas { display: block; margin: 16px !important; }
+  .capture-atlas img {
+    float: none !important;
+    width: auto !important;
+    max-width: 100%;
+    height: auto !important;
+    padding: 8px 0 !important;
+    margin: 0 auto;
   }
 }

@@ -1,7 +1,7 @@
 body {
   background-color: black;
   color: white;
-  font-family: monospace;
+  font-family: "Fira Code", monospace;
 }
 
 /* Sticky site header */
@@ -13,6 +13,10 @@ body {
 .site-header .header-inner {
   padding: 10px;
   margin-right: 45vw; /* keep clear of right videostrip on desktop */
+}
+
+h1 {
+  font-size: 26px;
 }
 
 /* Make sizing predictable across elements */
@@ -192,6 +196,7 @@ a.link {
   position: absolute;
   left: 400px;
   margin-top: 25px;
+  padding-top: 25px;
   font-size: 30px;
 }
 

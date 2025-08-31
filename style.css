@@ -4,7 +4,6 @@ body {
   font-family: "Fira Code", monospace;
 }
 
-/* Sticky site header */
 .site-header {
   position: sticky;
   top: 0;
@@ -12,7 +11,7 @@ body {
 }
 .site-header .header-inner {
   padding: 10px;
-  margin-right: 45vw; /* keep clear of right videostrip on desktop */
+  margin-right: 35vw; 
 }
 
 h1 {
@@ -44,8 +43,6 @@ body.writing-page {
 
 .top-intro {
   display: grid; 
-  /* grid-template-columns: 0.8fr 0.8fr; */
-  /* gap: 30px; */
   font-size: 15px;
   margin-top: 5px; 
   margin-bottom: 10px;
@@ -70,7 +67,6 @@ body.writing-page {
   display: block;
 }
 
-/* Never overlap on narrow screens: stack vertically */
 @media (max-width: 900px) {
   .page { grid-template-columns: 1fr; }
   /* Let the video strip stack and shrink */
@@ -78,7 +74,7 @@ body.writing-page {
     position: static;
     height: auto;
     max-height: none;
-    border-width: 0 12px; /* keep dashed borders on mobile */
+    border-width: 0 12px; 
     margin: 0 16px 24px;
   }
   .videostrip iframe { height: min(35vh, 320px); }
@@ -94,12 +90,10 @@ a.link {
   padding-top: 10px;
   padding-bottom: 100px;
   margin-right: 300px;
-  /* margin-left: 80px; */
   justify-content: center;
 }
 
 .key {
-  /* display: flex; */
   justify-content: center;
   color: greenyellow;
 }
@@ -111,7 +105,6 @@ a.link {
   background-repeat: no-repeat;
 }
 
-/* Exchange section content blocks (replaces inline margins) */
 .exchange-content {
   display: grid;
   margin-left: 150px;
@@ -166,7 +159,6 @@ a.link {
   margin-right: 200px;
 }
 
-/* Home highlight block (replaces inline styles in index.html) */
 .home-highlight {
   display: block;
   margin-top: 20px;
@@ -279,7 +271,7 @@ a.link {
 
 .back{
   position: fixed;
-  right: 200px;
+  right: 400px;
   top: 80px;
 }
 
@@ -315,12 +307,9 @@ nav {
   padding: 0 3px;
 }
 
-/* Responsive overrides for narrow screens */
 @media (max-width: 900px) {
-  /* So text doesn’t hug the edges */
   body { padding: 0 10px; }
 
-  /* Undo large fixed margins for content blocks */
   .intro,
   .performance,
   .AI,
@@ -341,14 +330,11 @@ nav {
 
   .page-img { float: none; margin: 20px 0; }
 
-  /* Header: remove huge right margin on mobile, keep it sticky */
   .site-header .header-inner { margin-right: 16px !important; }
 
-  /* Sizing tweaks */
   h1 { font-size: clamp(18px, 6vw, 28px); }
   .key { font-size: clamp(16px, 4.5vw, 22px); }
 
-  /* Keep back-to-top buttons inside viewport edges */
   .back, .top { right: 16px; }
 
   /* Make the intro highlight area full-width and stacked */
@@ -361,7 +347,6 @@ nav {
   .home-works-label { position: static; font-size: clamp(20px, 5.5vw, 28px); margin-top: 12px; }
 }
 
-/* Additional mobile rules for Exchange block */
 @media (max-width: 900px) {
   .exchange-content,
   .exchange-text-block {
@@ -376,18 +361,27 @@ nav {
   }
 }
 
-/* Mobile-friendly media sizing and centering for work pages */
 @media (max-width: 900px) {
-  /* Center the image stacks and make them full width */
+  .back {
+    position: static;
+    right: auto;
+    top: auto;
+    margin: 8px 16px 0;
+    display: grid;
+    justify-items: end; 
+    gap: 6px;           
+  }
+  .back h2 { margin: 0; }
+  .back a { margin: 0 !important; }
+
   .page-img { display: grid; justify-items: center; margin: 16px !important; }
   .page-img img {
-    width: 100% !important;     /* override inline width="...px" */
-    max-width: 700px;           /* optional cap for very large screens */
+    width: 100% !important;     
+    max-width: 700px;           
     height: auto;
-    padding: 8px 0 !important;  /* soften large inline paddings */
+    padding: 8px 0 !important;  
   }
 
-  /* Make embedded videos fluid */
   .video-player iframe,
   .page-texts iframe {
     width: 100% !important;
@@ -395,7 +389,6 @@ nav {
     aspect-ratio: 16 / 9;
   }
 
-  /* Stack gallery images vertically and fill width */
   .page-gallery { flex-direction: column; margin: 16px !important; }
   .page-gallery img {
     width: 100% !important;
@@ -403,7 +396,6 @@ nav {
     padding: 8px 0 !important;
   }
   
-  /* Capture atlas: keep aspect ratio, remove float, use full width */
   .capture-atlas { display: block; margin: 16px !important; }
   .capture-atlas img {
     float: none !important;
